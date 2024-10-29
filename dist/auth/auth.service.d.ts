@@ -1,6 +1,6 @@
-import { Model } from 'mongoose';
-import { JwtService } from '@nestjs/jwt';
-import { User } from './schemas/user.schema';
+import { Model } from "mongoose";
+import { JwtService } from "@nestjs/jwt";
+import { User } from "./schemas/user.schema";
 export declare class AuthService {
     private userModel;
     private jwtService;
@@ -16,6 +16,8 @@ export declare class AuthService {
         remainingScrapes: number;
         isValid: boolean;
     }>;
+    private checkAndResetScrapes;
+    private shouldResetScrapes;
     updateScrapes(token: string): Promise<{
         remainingScrapes: number;
     }>;
